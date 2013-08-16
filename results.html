@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="http://www.btrnt.com/favicon.ico?t="/>
+<?php
+  $browser = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+    if ($browser == true){
+    $browser = 'iphone';
+  }
+?>
+<?php if($browser == 'iphone'){ ?>
+  <title>Twerifier</title>
+ <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+ <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
+  <link rel="stylesheet" type="text/css" href="mobile.css" media="all">
+  <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- you can comment this out to test to make sure it works-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<?php }else{ ?>
+  <title>Twerifier by @jamescampbell</title>
+  <link rel="stylesheet" type="text/css" href="view.css" media="all">
+<?php } ?>
+<script type='text/javascript'>
+function hideAddressBar()
+{
+  if(!window.location.hash)
+  {
+      if(document.height < window.outerHeight)
+      {
+          document.body.style.height = (window.outerHeight + 50) + 'px';
+      }
+
+      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+  }
+}
+</script>
+
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+
+<script type="text/javascript" src="http:///ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body id="main_body" onload="history.forward();GetFree('<?php echo $map ?>');">
+	<div id="form_container">
+	<div id="titler"><h1><a href="#">RESULTS↴</a></h1></div>
+	<?php include 'getuser.php'; ?>
+
+		<div id="titler"><h1><a href="http://www.btrnt.com/">check another→</a></h1></div>
+		<div class="form_description">
+			<p id='known'style="text-align:center">"know before you follow"</p>
+		</div>
+	<script type="text/javascript">
+
+GetFree("<?php echo $map ?>");
+
+</script>
+		
+<script type="text/javascript">
+function noBack()
+{
+window.history.forward();
+}
+var stateObj = { foo: "bar" };
+history.pushState(stateObj, "results", "lookup.php?u=secret");
+history.pushState(stateObj, "results", "results.aspx?kiddies");
+var Backlen=history.length;   
+  history.go(-Backlen);
+  window.history.forward();
+</script>
+
+
+<div style="text-align:center;" id='geo-map'>
+<h4>map of last tweet</h4>
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=<?php echo $latlng;?>&amp;aq=&amp;sll=<?php echo $latlng;?>&amp;sspn=0.354858,0.532837&amp;t=v&amp;ie=UTF8&amp;ll=<?php echo $latlng;?>&amp;spn=0.022176,0.033302&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=<?php echo $latlng;?>&amp;aq=&amp;sll=<?php echo $latlng;?>&amp;sspn=0.354858,0.532837&amp;t=v&amp;ie=UTF8&amp;ll=<?php echo $latlng;?>&amp;spn=0.022176,0.033302&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+	
+	<div id="footer">
+			by <a href="http://www.twitter.com/jamescampbell">@jamescampbell</a> | <a title='about bot r not' href= "http://www.btrnt.com/about-faq.html">about & FAQ</a> | <a href='http://www.btrnt.com/' title='bot r not home'>project home</a>
+		</div>
+</div>
+<script type='text/javascript'>
+  //event listeners to do full screen mode
+    window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+window.addEventListener("orientationchange", hideAddressBar );
+</script>
+</body>
+
+</html>

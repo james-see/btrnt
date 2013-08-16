@@ -1,0 +1,277 @@
+@font-face {
+  font-family: "Chock A Block NF";
+  src: url(Chock-a-BlockNF.ttf) format("truetype");
+}
+
+body {
+   -webkit-touch-callout: none;
+	width:auto;
+	margin:0;
+	padding:0;
+	min-height: 520px;
+	font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-size:.9em;
+}
+
+div#titler {
+   background: #80c0f7;
+   width:100%;
+   text-align:center;
+   font-family: "Chock A Block NF";
+   font-size: 100%;
+   padding-top: 20px;
+}
+
+ul, li {
+	list-style-type: none;
+	width: auto;
+}
+
+ul {
+	margin-left:-40px;
+}
+
+
+div#titler a {
+	text-decoration: none;
+	padding-bottom:10px;
+}
+
+
+#form_container {
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+div {
+	clear:both;
+	width:100%;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+
+#main_body {
+	clear:both!important;
+	margin:0;
+	padding:0;
+	width:auto;
+}
+
+#top
+{
+	height:10px;
+	margin:0;
+	width:100%;
+	padding:0;
+}
+
+#footer
+{
+	width:100%;
+	color:#999999;
+	text-align:center;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	font-size: 85%;
+	border-top: 1px solid #ccc;
+}
+
+#footer a{
+	color:#999999;
+	text-decoration: none;
+	border-bottom: 1px dotted #999999;
+}
+
+#bottom
+{
+	display:block;
+	height:10px;
+	margin:0 auto;
+	width:100%;
+	padding:0;
+}
+
+
+
+
+#verified {
+	font-family: Arial, sans-serif;
+	background-color: #87e687;
+	border: solid 1px #ccc;
+	display: none;
+	font-style: italic;
+}
+#invalid {
+	font-family: Arial, sans-serif;
+	font-style: italic;
+	background-color: red;
+	border: solid 1px #ccc;
+	display: none;
+}
+
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border:1px solid #ccc;
+  font-size:16px;
+  min-height:30px;
+  margin-bottom:15px;
+  margin-top:5px;
+  outline: none;
+  max-width: 80%;
+
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -o-border-radius:5px;
+  -ms-border-radius:5px;
+  border-radius:5px;
+  text-align: center;
+}
+
+li div label
+{
+	clear:both;
+	color:#444;
+	font-size:9px;
+	line-height:9px;
+	margin:0;
+	padding-top:3px;
+}
+
+li span label
+{
+	clear:both;
+	color:#444;
+	font-size:9px;
+	line-height:9px;
+	margin:0;
+	padding-top:3px;
+}
+
+.form_description
+{
+	border-bottom:1px dotted #ccc;
+	clear:both;
+	display:inline-block;
+	margin:0 0 1em;
+}
+
+.form_description[class]
+{
+	display:block;
+}
+
+.form_description h2
+{
+	clear:left;
+	font-size:160%;
+	font-weight:400;
+	margin:0 0 3px;
+}
+
+.form_description p
+{
+	font-size:95%;
+	line-height:130%;
+	margin:0 0 12px;
+}
+
+h1 a, h1 a:visited
+{
+	color: black;
+	display:block;
+	height:100%;
+	min-height:40px;
+	overflow:hidden;
+}
+
+li
+{
+	display:block;
+	margin:0;
+	padding:4px 5px 2px 9px;
+	position:relative;
+}
+
+li:after
+{
+	clear:both;
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+
+a:visited {color: #5e5e5e;}
+
+#txtCaptchaDiv {
+	font-size: 120%;
+	pointer-events:none;
+	text-decoration:none;
+	color:red;
+}
+
+
+ul li:first-child {background: #F2F2F2; padding: 10px 20px 10px 20px; border-radius:5px;}
+ul li:nth-child(even) {background: #F2F2F2; padding: 10px 20px 10px 20px; border-radius:5px;}
+#tname {
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: normal;
+	
+}
+
+lh #resultstitle {
+	border-top:#b3b3b3;
+	text-transform: capitalize;
+	color: white;
+}
+
+#circular {
+display: block;
+  width: 150px;
+  height: 150px;
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 5px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
+}
+
+#description {
+	font-size: .7em;
+	font-family: Arial, sans-serif;
+	letter-spacing: .05em;
+	background-color: #e3e3e3;
+	margin: 5px;
+}
+
+#wrapper {
+clear: both;
+display: auto;
+	margin: none;
+	text-align: center;
+	width: 100%;
+}
+
+#double {
+float:left;
+	margin: 5px 15px 5px 0; 
+	padding: 5px;
+	background-color: #d3d3d3;
+}
+
+#warning {
+	background-color: rgba(201,65,65,0.54);
+	color: red;
+	text-align: center;
+	margin: 5px;
+}
+
+#geo-map {
+	display:none;
+}

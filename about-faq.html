@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html manifest="tw.appcache">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ABOUT & FAQ for BOT r NOT</title>
+<head>
+<script type="text/javascript" src="http:///ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+function hideAddressBar()
+{
+  if(!window.location.hash)
+  {
+      if(document.height < window.outerHeight)
+      {
+          document.body.style.height = (window.outerHeight + 50) + 'px';
+      }
+
+      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+  }
+}
+</script>
+<style TYPE="text/css">
+#head {
+	padding: 20px;
+}
+h1 {
+	font-family: Helvetica;
+	text-transform:uppercase;
+}
+body {
+	font-family: Courier,monospace;
+	font-size: 14px;
+	max-width: 700px;
+	margin:0 auto;
+}
+
+div #faqs {
+  width: auto;
+  margin: auto 0 0;
+  padding: 0 50px 0 50px;
+}
+ 
+ul {
+  color: #ccc;
+  list-style-type: none;
+}
+ 
+ul li {
+  position: relative;
+  font: bold italic 30px/1.5 Courier, monospace;
+  margin-bottom: 20px;
+}
+ul li:first-child {background: #F2F2F2; padding: 10px 20px 10px 20px; border-radius:5px;}
+ul li:nth-child(even) {background: #F2F2F2; padding: 10px 20px 10px 20px; border-radius:5px;}
+
+ 
+li p {
+  font: 12px/1.5 Courier, monospace;
+  padding-left: 60px;
+  color: #1d1d1d;
+}
+ 
+span {
+  position: absolute;
+}
+
+#buttoned {
+  width: 215px;
+  height: 55px;
+  background: #4E9CAF;
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  text-decoration:none;
+}
+#footer {
+	margin: auto 0 0;
+	width: 100%;
+}
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  body{
+	        -webkit-text-size-adjust:auto;
+	        font-size: 170%;
+	
+	    }
+		div{
+		        float:none!important;
+		       
+		    }
+			img{
+			        max-width:100%;
+			        height:auto;
+			    }
+			#mobile {display:auto;}
+		ul li p {
+			font-size: 120%;
+		}
+		ul li span {
+			font-size: 160%;
+		}
+		#footer {width:100% margin: auto 0 0;}
+		#footer p {font-size: 120%;padding:40px;}
+		#buttoned {font-size: 200%;width:300px; height:150px;border-radius:15px;}
+}
+
+</style>
+
+<div id='head' style='text-align:center;'><h1>About the project & FAQ</h1></div>
+</head>
+<body>
+<div id='main' style='margin:0 auto; padding: 20px 50px 10px 50px;'>
+<h3>About</h3> <!-- about section last edited April 2013 by @jamescampbell -->
+<p id='desc' style='width:auto;padding:0 50px 10px 50px;'>
+In April 2013, James wanted to check his twitter id, but there was no good way to do that, so this app was born.</p>
+<p id='body' style='width:auto;padding:0 50px 10px 50px;'>
+While developing the app, James wanted to see how his follower and following ratio compared to others and attempt to quantify a 'popularity' index based on these numbers (similar to Klout, but with a transparent rating mechanism). Also, it became apparent that identifying 'spammers' based on the volume of tweets over time and other factors was a good idea as well. 
+<p id='body' style='width:auto;padding:0 50px 10px 50px;'>
+The code used is php, javascript, jquery, and plain old html with some css3 & mobile media queries thrown in for fun. To authenticate the app in twitter, James uses the <a href='https://github.com/mynetx/codebird-php'>codebird php</a> library that is recommended on the <a href='https://dev.twitter.com/docs/twitter-libraries'>Twitter libraries</a> page.
+<br />
+<br /></p>
+
+<h3>FAQ</h3>
+<div id='faqs'>
+  <ul>
+    <li><span>1.</span><p>Who cares?</p>
+    <p>James does. He cares a lot. He finds hacking up websites like this fun. You don't get it? Tell him about it <a href='mailto:lifeofjim@gmail.com?subject=I am a hater'>here</a>. You like it? Tell him about it <a href='mailto:lifeofjim@gmail.com?subject=I am a fan'>here</a>.</p></li>
+    <div id='popularity'></div>
+    <li id='popularity'><span>2.</span><p>What the hell does <b>popularity</b> mean in terms of this app?</p>
+    <p>You know those people that peaked at the prom? That is not what this is. Popularity is still very experimental (meaning James keeps messing with the formula) and it is a function of how many followers a particular twitter user has in relation to the number of people that user is following. While this number tells you more than your Klout score (jk), it should not be used at parties, and definitely don't put this number on your resume. Barack Obama's score is 92, and he has millions of followers. James's score is 25 and he has 13000 followers. You figure it out.</p></li>
+    <li id='verification'><span>3.</span><p>Why is the verification code so long?</p>
+    <p>Ask your parents. James will make it longer if anyone else complains. Seriously, it is to fight off the bots. If you are reading this, you probably aren't one, so type the numbers and carry on.</p></li>
+    <li id='spalgorithm'><span>4.</span><p>What is the <b>spalgorithm</b>?</p>
+    <p>The spalgorithm is not really an algorithm, but a way of life. Really it is a way to <i>verify</i> life, the more negative points in the profile, the higher the probability that the profile is a bot / spammer. Currently, the spalgorithm checks 9 things: If the twitter user has a description, a location listed, a custom twitter image, a custom twitter background, any favorites, a website listed, the tweets per day, whether the account has ever tweeted, and the newness of the twitter account (profile creation date). More will be added as James has time.</p></li>
+    <li><span>5.</span><p>What about a map of the user's tweets?</p>
+    <p>It's still an experimental feature, but if geo is turned on for the profile you can click on the profile link that opens up a map of any tweets that have geo-data (based on coordinates stored in twitter and publically available via the 1.1 REST API). I am relying heavily on the work of <a href='http://www.bradwedell.com/php-google-maps-api'>Brad Wedell and his PHP Google Maps API project.</a> Thanks Brad.</p></li>
+
+    <li><span>6.</span><p>More Questions and Answers coming soon.</p>
+    <p>Thanks for stopping by.</p></li>
+  </ul> 
+   
+
+</div>
+
+
+</div>
+	<div id="footer" style='text-align:center;'>
+	 <!-- back button link -->
+    <div style='text-align:center;padding-top: 40px; padding-bottom: 40px;'><a id='buttoned'href='http://www.btrnt.com/' title='twerifier home'>BACK to MAIN</a></div>
+			<p>by <a href="http://www.twitter.com/jamescampbell">@jamescampbell</a> | <a href='http://www.btrnt.com/' title='twerifier home'>project home</a></p>
+			<div id='greetme'></div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+var d = new Date();    // defaults to the current time in the current timezone
+var greeting = 'Good Afternoon.';
+if (d.getHours() < 12) {
+    greeting =  "Good morning.";
+} else if (d.getHours() > 12 && d.getHours() < 16) {
+    greeting = "Good afternoon.";
+}
+else if (d.getHours() > 16) {
+	greeting = "Good evening.";
+}
+var currentHours = d.getHours();
+if (currentHours > 12) {currentHours = currentHours - 12;}
+var beforeafter = 'PM';
+if (d.getHours() < 12) {
+	beforeafter = 'AM';
+}
+var currentDay = d.getDate();
+var currentYear = d.getYear();
+var currentMonth = d.getMonth();
+var currentMin = d.getMinutes();
+//currentHours = ( currentHours < 10 ? "0" : "" ) + currentHours;
+currentMin = ( currentMin < 10 ? "0" : "" ) + currentMin;
+//$('span#greetme').append(greeting);
+	$('#greetme').append("<b>current time is "+currentHours+":"+currentMin+"</b><b>"+beforeafter+" - "+greeting+"</b>";
+});
+
+  window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+window.addEventListener("orientationchange", hideAddressBar );
+</script>
+</body>
+
+</html>

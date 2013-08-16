@@ -1,0 +1,26 @@
+CACHE MANIFEST
+# v1 2013-06-17 last updated - 930pm
+# James Campbell attempt to cache using html5
+CACHE:
+view.css
+mobile.css
+add2home.css
+add2home.js
+datediff.php
+codebird.php
+PTF-NORDIC-Std.ttf
+Chock-a-BlockNF.ttf
+
+# use from network if available
+NETWORK:
+*
+http://blog.jamescampbell.us/projects/twerify/about-faq.html
+http://blog.jamescampbell.us/projects/twerify/
+index.html
+check.php
+getuser.php
+results.html
+about-faq.html
+
+FALLBACK:
+fallback.html
