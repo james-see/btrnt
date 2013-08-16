@@ -68,6 +68,9 @@ function hideAddressBar()
   <title>Bot R Not by @jamescampbell</title>
   <link rel="stylesheet" type="text/css" href="view.css" media="all">
 <?php } ?>
+
+<?php include 'mycon.php'?>
+<?php include 'getpop.php'?>
 <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png"/>
 </head>
 <body id="main_body" onload="hideAddressBar()">
@@ -105,6 +108,12 @@ function hideAddressBar()
 	</form>
 		<div id="footer">
 			by <a href="http://www.twitter.com/jamescampbell">@jamescampbell</a> | <a href= "http://www.btrnt.com/about-	faq.html">about & FAQ</a> 
+		</div>
+		<div id="stats">
+			<ul>
+			<?php echo "<li>total in database: $totalcount</li>";
+			echo "<li>worst rated user: <a href='http://www.btrnt.com/results.html?username=$topbot'>$topbot</a></li>";?>
+			</ul>
 		</div>
 	</div>
 	
