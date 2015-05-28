@@ -1,193 +1,54 @@
-<!DOCTYPE html>
-<html manifest="tw.appcache">
+<!DOCTYPE HTML>
 <head>
-	<script type="text/javascript">
-		(function(document,navigator,standalone) {
-			// prevents links from apps from oppening in mobile safari
-			// this javascript must be the first script in your <head>
-			if ((standalone in navigator) && navigator[standalone]) {
-				var curnode, location=document.location, stop=/^(a|html)$/i;
-				document.addEventListener('click', function(e) {
-					curnode=e.target;
-					while (!(stop).test(curnode.nodeName)) {
-						curnode=curnode.parentNode;
-					}
-					// Condidions to do this only on links to your own app
-					// if you want all links, use if('href' in curnode) instead.
-					if('href' in curnode ) {
-						e.preventDefault();
-						location.href = curnode.href;
-					}
-				},false);
-			}
-		})(document,window.navigator,'standalone');
-	</script>
-<script type="text/javascript" src="http:///ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript">
-
-var addToHomeConfig = {
-	returningVisitor: true,		// Show the message only to returning visitors (ie: don't show it the first time)
-	expire: 720					// Show the message only once every 12 hours
-};
-
-
-function hideAddressBar()
-{
-  if(!window.location.hash)
-  {
-      if(document.height < window.outerHeight)
-      {
-          document.body.style.height = (window.outerHeight + 50) + 'px';
-      }
-
-      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-  }
-}
-</script>
-<link rel="stylesheet" href="add2home.css">
-<script type="application/javascript" src="add2home.js"></script>
-<link rel="shortcut icon" href="http://www.btrnt.com/favicon.ico?t="/>
-<?php
-  $browser = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-    if ($browser == true){
-    $browser = 'iphone';
-  }
-?>
-<?php if($browser == 'iphone'){ ?>
-  <title>Bot R Not</title>
-  <meta name="format-detection" content="telephone=no">
- <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
- <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
-  <link rel="stylesheet" type="text/css" href="mobile.css" media="all">
-  <meta name="apple-touch-fullscreen" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- you can comment this out to test to make sure it works-->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-<?php }else{ ?>
-  <title>Bot R Not by @jamescampbell</title>
-  <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<?php } ?>
-
-<?php include 'mycon.php'?>
-<?php include 'getpop.php'?>
-<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png"/>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>Bot R Not</title>
 </head>
-<body id="main_body" onload="hideAddressBar()">
-	<div id="form_container">
-	<form action="JavaScript:SubmitFrm()">
-		<div id='titler'><h1><a href="http://www.btrnt.com">bot r not</a></h1></div>
-			<div class="form_description">
-				<p style="text-align:center">"know before you follow"</p>
-			</div>						
-			
-			<ul style="text-align:center" >
-			
-					<li class="noback"id="li_1" >
-						<label class="description" for="username"></label>
-						
-						<div>
-	<input id="username" name="username" class="username" type="text" maxlength="16" size="30" value="" placeholder="twitter username to analyze" onblur="JavaScript:userCheck($('#username').val())" /> 
-						</div>
-						<!-- displays red or green text after onblur twitter user validation -->
-						<div id="verified">verified - twitter user exists</div><div id="invalid">invalid - no twitter username found</div> 
-					</li>
-		
-		
-					<label for="code"></label> 
-					<li id="txtCaptchaDiv" style="color:#F00;text-align:center;"></li><!-- this is where the script will place the generated code -->
-		
-					<li><input type="hidden" id="txtCaptcha" style="text-align:center;" /></li>
-						<!-- this is where the script will place a copy of the code for validation: this is a hidden field -->
-	
-					<li class='noback'> <input type="text" name="txtInput" id="txtInput" size="30" placeholder="write code you see in red" /></li>
-					<li id='noback'class="buttons">
-						<input id="clicker" class="button" type="button" name="clicker" onmouseup="JavaScript:SubmitFrm()" value="Submit→" />
-					</li>
-			</ul>
-	</form>
-		<div id="footer">
-			by <a href="http://www.twitter.com/jamescampbell">@jamescampbell</a> | <a href= "http://www.btrnt.com/about-	faq.html">about & FAQ</a> 
-		</div>
-		<div id="stats">
-			<ul>
-			<?php echo "<li>total in database: $totalcount</li>";
-			echo "<li>worst rated user: <a href='http://www.btrnt.com/results.html?username=$topbot'>$topbot</a></li>";
-			echo "<li>last checked: <a href='http://www.btrnt.com/results.html?username=$lasttenone'>$lasttenone</a></li>";?>
-			</ul>
-		</div>
+<body>
+	<div>
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//instantdc.us1.list-manage.com/subscribe/post?u=4a9129fb0dd995c4a0b6e1f81&amp;id=7bfb24e3a1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	    <h2><b>Bot R Not is back! We will be going live soon with a new interface.</b></h2>
+	<h2>Subscribe to infrequent updates from Bot R Not and be notified first when new features are available.</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">First Name </label>
+	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+	<label for="mce-LNAME">Last Name </label>
+	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+</div>
+<div class="mc-field-group input-group">
+    <strong>Email Format </strong>
+    <ul><li><input type="radio" value="html" name="EMAILTYPE" id="mce-EMAILTYPE-0"><label for="mce-EMAILTYPE-0">html</label></li>
+<li><input type="radio" value="text" name="EMAILTYPE" id="mce-EMAILTYPE-1"><label for="mce-EMAILTYPE-1">text</label></li>
+</ul>
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_4a9129fb0dd995c4a0b6e1f81_7bfb24e3a1" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<div class='foot' style='position:relative;text-align:center;'>
+<span style='fposition: absolute;top: 50%;left: 0;right: 0;margin-top: -9px;font-style:italic;font-family:sans-serif;'>Bot R Not is owned and updated by <a href='http://www.brightzebramedia.com'>Bright Zebra Media</a></i></span></div>
+<!--End mc_embed_signup-->
 	</div>
-	
-<script type="text/javascript">
-
-	//Check if userexists onblur from user field
-function userCheck(user){
-	var userfix = 'name='+user;
-	$.ajax({
-	    type: "GET",
-	    url: "check.php",
-	    data: userfix,
-	    cache: false,
-	    datatype: 'html',
-	    success: function(data){
-	    if (data == '1') {
-	       $('#verified').css({'display':'block'});
-	       $('#invalid').css({'display':'none'});
-	        //alert('user exists' + data);
-	    } else {
-	    	$('#invalid').css({'display':'block'});
-	    	$('#verified').css({'display':'none'});
-	        //alert('user does not exist' + data);
-	    }
-	    //alert(result);    
-	    }
-	});
-	}
-
-
-		// Remove the spaces from the entered and generated code
-		function removeSpaces(string){
-			return string.split(' ').join('');
-		}
-
-	function SubmitFrm(){
-	    var username = $('#username').val();
-		if (username == '') {alert ("username cannot be blank"); return false;} else { 
-		var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
-		var str2 = removeSpaces(document.getElementById('txtInput').value);
-		if (str1 == str2){
-	        //var Searchtxt = document.getElementById("username").value;
-	        window.location = "http://www.btrnt.com/results.html?username=" + username; } 
-			else{
-				alert("code failure, try again");
-			}
-	    }
-	}
-//Generates the captcha function   
-
-    var a = Math.ceil(Math.random() * 9)+ '';
-
-    var b = Math.ceil(Math.random() * 9)+ '';      
-    var c = Math.ceil(Math.random() * 9)+ ''; 
-    var d = Math.ceil(Math.random() * 9)+ ''; 
-    var e = Math.ceil(Math.random() * 9)+ ''; 
-    var f = Math.ceil(Math.random() * 9)+ ''; 
-    var g = Math.ceil(Math.random() * 9)+ '';
-    var h = Math.ceil(Math.random() * 9)+ '';
-
-    var codelong = a + b + c + d + e + f + g + h;
-    var code = a + f + c + h;
-    document.getElementById("txtCaptcha").value = code;
-    document.getElementById("txtCaptchaDiv").innerHTML = code; 
-    //event listeners to do full screen mode
-    window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
-window.addEventListener("orientationchange", hideAddressBar );
-$('#username').mousedown(function() {
-  $('#username').css({'placeholder':''});
-});
-$('#txtInput').mousedown(function() {
-	$('#txtInput').css({'placeholder':''});	
-})
-</script>
-	</body>
-</html>
+</body>
+</HTML>
